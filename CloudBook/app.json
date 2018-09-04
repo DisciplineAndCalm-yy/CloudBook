@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/details/details"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccc",
+    "navigationBarTitleText": "CloudBook",
+    "navigationBarTextStyle": "black"
+  }
+}

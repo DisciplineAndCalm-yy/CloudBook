@@ -1,0 +1,36 @@
+<!--index.wxml-->
+<view class='container index'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{swiperData}}" wx:key="{{index}}">
+      <swiper-item bindtap='jumpBook' data-id='{{item.books._id}}'>
+        <image src="{{item.img}}" class="slide-image" width="355" height="150" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='main-content'>
+    <view class='content-item' wx:for='{{mainContent}}' wx:key='{{index}}'>
+      <view class='title'>
+        {{item.title}}
+      </view>
+      <view class='content' wx:for='{{item.books}}' wx:key='{{index}}'>
+        <view class='box-l'>
+          <image src='{{item.img}}' class='img'></image>
+        </view>
+        <view class='box-r'>
+          <view>
+            <view class='book-title'>{{item.title}}</view>
+            <view class='book-desc'>{{item.desc}}</view>
+          </view>
+          <view class='author'>
+            <text class='author-l'>{{item.author}}</text>
+            <view class='author-r'>
+              <text class='upadata-time'>两天之前</text>
+              <text class='category'>H5</text>
+              <text class='many'>{{item.looknums}}人在看</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
