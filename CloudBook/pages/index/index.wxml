@@ -1,36 +1,48 @@
-<!--index.wxml-->
-<view class='container index'>
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-    <block wx:for="{{swiperData}}" wx:key="{{index}}">
-      <swiper-item bindtap='jumpBook' data-id='{{item.books._id}}'>
-        <image src="{{item.img}}" class="slide-image" width="355" height="150" />
-      </swiper-item>
-    </block>
-  </swiper>
-  <view class='main-content'>
-    <view class='content-item' wx:for='{{mainContent}}' wx:key='{{index}}'>
-      <view class='title'>
-        {{item.title}}
-      </view>
-      <view class='content' wx:for='{{item.books}}' wx:key='{{index}}'>
-        <view class='box-l'>
-          <image src='{{item.img}}' class='img'></image>
+<view>
+  <image src='/static/img/chidou.svg' class='loading' wx:if='{{isLoading}}' wx:key="{{index}}"></image>
+  <view wx:else class='index'>
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{swiperData}}" wx:key="{{index}}">
+        <swiper-item bindtap="jumpBook" data-id="{{item.book._id}}">
+          <image src="{{item.img}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="main-content">
+      <view class="content-item" wx:for="{{mainContent}}" wx:key="index">
+        <view class="title">
+          {{item.title}}
         </view>
-        <view class='box-r'>
-          <view>
-            <view class='book-title'>{{item.title}}</view>
-            <view class='book-desc'>{{item.desc}}</view>
+        <view class="content" wx:for="{{item.books}}" wx:key="index" wx:for-item="bookItem" data-id="{{bookItem._id}}" bindtap="jumpBook">
+          <view class="box-l">
+            <image src="{{bookItem.img}}" class="img"></image>
           </view>
-          <view class='author'>
-            <text class='author-l'>{{item.author}}</text>
-            <view class='author-r'>
-              <text class='upadata-time'>两天之前</text>
-              <text class='category'>H5</text>
-              <text class='many'>{{item.looknums}}人在看</text>
+          <view class="box-r">
+            <view>
+              <view class="book-title">{{bookItem.title}}</view>
+              <view class="book-desc">{{bookItem.desc}}</view>
+            </view>
+            <view class="author">
+              <text class="author-l">{{bookItem.author}}</text>
+              <view class="aurhot-r">
+                <text class="update-time">一周前</text>
+                <text class="category">{{item.title}}</text>
+                <text class="many">{{bookItem.looknums}}人在看</text>
+              </view>
             </view>
           </view>
         </view>
       </view>
+    </view>
+  </view>
+  <view wx:if="{{!isLoading}}" wx:key="{{index}}">
+    <view class='load-more' wx:if="{{hasMore}}" wx:key="{{index}}">
+      <image class='img' src='/static/img/load-more.svg'></image>
+      <text>正在拼命加载中</text>
+    </view>
+    <view class='no-more' wx:else>
+      <text class='no-more-text'>我是有底线的</text>
+      <view class='line'></view>
     </view>
   </view>
 </view>

@@ -1,12 +1,39 @@
 {
   "pages": [
+    "pages/user/user",
     "pages/index/index",
-    "pages/details/details"
+    "pages/details/detail",
+    "pages/catalog/catalog",
+    "pages/book/book",
+    "pages/book-catalog/book-catalog"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ccc",
-    "navigationBarTitleText": "CloudBook",
+    "navigationBarBackgroundColor": "#f1f1f1",
+    "navigationBarTitleText": "云上书城",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/static/img/index.png",
+        "selectedIconPath": "/static/img/index-select.png"
+      },
+      {
+        "pagePath": "pages/book-catalog/book-catalog",
+        "text": "我的书屋",
+        "iconPath": "/static/img/book.png",
+        "selectedIconPath": "/static/img/book-select.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "个人中心",
+        "iconPath": "/static/img/user.png",
+        "selectedIconPath": "/static/img/user-select.png"
+      }
+    ]
   }
 }

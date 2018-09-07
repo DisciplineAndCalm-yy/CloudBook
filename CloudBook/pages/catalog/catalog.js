@@ -1,32 +1,30 @@
 // pages/catalog/catalog.js
 import {fetch} from '../../utils/util.js';
 Page({
-  /**
-   * 页面的初始数据
-   */
+
   data: {
-    bookId:'',
-    catalogData:[]
+    bookId: '',
+    catalogData: [],
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
+    console.log("Catalog--->catalog--->",options)
     this.setData({
-      bookId:options.id
-    })
-    this.getData();
+      bookId: options.id
+    });
+    this.getCatalog();
   },
-  
-  getData(){
-    fetch.get(`/titles/${this.data.bookId}`).then(res =>{
-      console.log(res);
+
+  getCatalog() {
+    fetch.get(`/titles/${this.data.bookId}`).then(res => {
+      console.log("Catalog--->getCatalog--->",res)
       this.setData({
-        catalogData:res.data
+        catalogData: res.data
       })
+      console.log("Catalog--->CatalogData",this.data.catalogData)
     })
   },
+
   onShareAppMessage: function () {
   
   }

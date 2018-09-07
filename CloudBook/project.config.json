@@ -4,16 +4,16 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.4",
+	"libVersion": "2.2.5",
 	"appid": "wxc6fbc745eef9eeaf",
-	"projectname": "CloudBook",
+	"projectname": "%E4%BA%91%E4%B9%A6%E5%9F%8E",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

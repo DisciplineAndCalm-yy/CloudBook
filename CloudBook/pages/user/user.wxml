@@ -1,0 +1,34 @@
+<!--pages/user/user.wxml-->
+<view>
+  <image src='/static/img/loadMore.svg' class='loading' wx:if="{{isLoading}}" wx:key="{{index}}"></image>
+  <view wx:else class='user'>
+    <view class='user-main'>
+      <view class='user-t'>
+        <view class='user-img'>
+          <image class='img' src="{{userInfo.avatarUrl}}"></image>
+        </view>
+        <view class='user-msg'>
+          <view class='nickname' type="{{userInfo.nickName}}">{{userInfo.nickName}}</view>
+          <view class='sdf'>这个人太懒了，没留下任何签名。。。</view>
+        </view>
+      </view>
+      <view class='user-b'>
+        <view class='collect'>
+          <text class='userfont'>收藏：</text>
+          <view class='collect-nums userfont'>2</view>
+        </view>
+        <view class='attention'>
+          <text class='userfont'>关注：</text>
+          <view class='nums userfont'>3</view>
+        </view>
+      </view>
+    </view>
+    <view class='programmer-say'>
+      <text class='content'></text>
+    </view>
+    <view class='feedback'>
+      <textarea class='feedback-write'></textarea>
+      <button class='btn'>提交</button>
+    </view>
+  </view>
+</view>

@@ -1,3 +1,9 @@
-.container{
-  padding: 0 20rpx;
+.loading{
+  position: fixed;
+  width: 350rpx;
+  height: 350rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 998;
 }
