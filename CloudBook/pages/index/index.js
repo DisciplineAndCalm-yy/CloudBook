@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-import { fetch, login } from '../../utils/util.js';
+import { fetch, login, transformtime} from '../../utils/util.js';
 
 const app = getApp()
 

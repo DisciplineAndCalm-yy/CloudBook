@@ -10,7 +10,7 @@
           <view class='title'>{{readItem.book.title}}</view>
           <view class='chapter'>书籍{{readItem.title.index}} / {{readItem.title.total}}章节</view>
           <view class='pro-bar'>
-            <progress class='pro' percent='{{num}}' show-info active='true'>已看</progress>
+            <progress class='pro' percent='{{readItem.num}}' show-info active='true'>已看</progress>
             <view class='lookover'></view>
           </view>
           <view class='last'>

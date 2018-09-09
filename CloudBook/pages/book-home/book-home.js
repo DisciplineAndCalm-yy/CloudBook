@@ -6,7 +6,6 @@ Page({
     isLoading: false,
     readBook: [],
     bookId: '',
-    num: ''
   },
 
   onLoad: function(options) {
@@ -19,16 +18,14 @@ Page({
     })
     fetch.get('/readList').then(res => {
       console.log('Home--->readList--->',res)
-      this.setData({
-        readBook: res.data,
-        isLoading: false
-      })
       res.data.forEach(item => {
         item.num = Math.round((item.title.index / item.title.total) * 100)
-        this.setData({
-          num: item.num
-        });
       })
+      this.setData({
+        readBook: res.data,
+        isLoading: false,
+      })
+      console.log('--->', this.data.readBook)
     }).catch(err => {
       this.setData({
         isLoading: false

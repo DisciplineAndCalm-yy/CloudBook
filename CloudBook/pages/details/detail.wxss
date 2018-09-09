@@ -13,12 +13,14 @@
 }
 
 .book-t .title {
+  width: 380rpx;
   color: #333;
   font-size: 28rpx;
   font-weight: 700;
 }
 
 .book-t .img {
+  margin-left: 30rpx;
   width: 220rpx;
   height: 280rpx;
 }
@@ -32,7 +34,7 @@
 
 .book-b {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-top: 50rpx;
 }
 
