@@ -3,7 +3,7 @@ import {fetch} from '../../utils/util.js';
 Page({
 
   data: {
-    booId: '',
+    bookId: '',
     bookData: {},
     isLoading: false
   },
@@ -35,17 +35,36 @@ Page({
   },
 
   toggleCollect() {
-    fetch.get(`/book/${this.data.bookId}`).then(res => {
+    console.log("收藏成功", this.data.bookData.isCollect)
+      fetch.post('/collection',{bookId: this.data.bookId}).then(res => {
+        wx.showToast({
+          title: '收藏成功!',
+          type: "success",
+          duration: 1000
+        })
+        let bookData = [ ...this.data.bookData ]
+        bookData.isCollect = 1
+        this.setData({
+          bookData: bookData
+        })
+        this.getData();
+      })
+  },
+
+  deteleCollect() {
+    console.log("取消收藏", this.data.bookData.isCollect)
+    fetch.delete(`/collection/${this.data.bookId}`).then(res => {
       wx.showToast({
-        title: '收藏成功!',
+        title: '取消收藏!',
         type: "success",
         duration: 1000
       })
-      let bookData = {...this.data.bookData}
-      bookData.isCollect = 1
+      let bookData = [...this.data.bookData]
+      bookData.isCollect = 0
       this.setData({
         bookData: bookData
       })
+      this.getData();
     })
   },
 

@@ -1,0 +1,27 @@
+<!--pages/collect/collect.wxml-->
+<view>
+  <image src='/static/img/load.svg' class='loading' wx:if='{{isLoading}}' wx:key='{{index}}'></image>
+  <view wx:else class="main-content">
+    <view class="content-item">
+      <view class="content" wx:for="{{collectData}}" wx:key="index" wx:for-item="collectItem" data-id="{{collectItem._id}}" bindtap='jumpBook'>
+        <view class="box-l">
+          <image src="{{collectItem.book.img}}" class="img"></image>
+        </view>
+        <view class="box-r">
+          <view>
+            <view class="book-title">{{collectItem.book.title}}</view>
+            <view class="book-desc">{{collectItem.book.desc}}</view>
+          </view>
+          <view class="author">
+            <text class="author-l">{{collectItem.book.author}}</text>
+            <view class="aurhot-r">
+              <text class="update-time">一周前</text>
+              <text class="category">{{collectItemem.book.title}}</text>
+              <text class="many">{{collectItem.book.looknums}}人在看</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

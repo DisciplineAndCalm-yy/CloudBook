@@ -16,9 +16,8 @@ const fetch = {
         data,
         header,
         success(res) {
-          console.log("header--->",res)
           if (res.header.Token){
-            wx.setStorageSync('token', res.header.Token)
+            wx.setStorageSync('token', res.header.Token || res.header.token)
           }
           resolve(res.data);
         },
@@ -33,6 +32,9 @@ const fetch = {
   },
   post(url, data) {
     return this.http(url, "POST", data)
+  },
+  delete(url, data) {
+    return this.http(url, "DELETE", data)
   }
 }
 

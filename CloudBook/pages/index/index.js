@@ -73,9 +73,13 @@ Page({
   },
 
   onPullDownRefresh() {
+    this.setData({
+      pn: 1,
+      hasMore: true
+    });
     this.getAllData().then(()=>{
       wx.stopPullDownRefresh();
-    })
+    });
   },
 
   getMoreContent() {

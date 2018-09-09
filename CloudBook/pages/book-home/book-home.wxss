@@ -1,0 +1,43 @@
+/* pages/book-home/book-home.wxss */
+.main{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 20rpx;
+}
+.main .box-left .img{
+  width: 230rpx;
+  height: 300rpx;
+}
+.box-right{
+  margin-left: 20rpx;
+  width: 400rpx;
+}
+.box-right .box-r-top{
+  font-size: 28rpx;
+  color: #aaa;
+  padding: 20rpx;
+}
+.box-r-top .title{
+  margin-top: -20rpx;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  color: #555
+}
+.box-r-top .chapter{
+  font-size: 28rpx;
+}
+.box-r-top .last{
+  display: flex;
+  justify-content: space-between;
+}
+.box-r-btm{
+  display: flex;
+  justify-content: space-between;
+}
+.box-r-btm .btn{
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  background: #f1f1f1;
+}

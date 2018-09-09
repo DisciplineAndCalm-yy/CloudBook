@@ -1,15 +1,18 @@
 // pages/user/user.js
+import { fetch } from '../../utils/util.js';
+
 Page({
 
   data: {
     isLoading: false,
-    userInfo: {}
+    userInfo: {},
+    collectData: []
   },
 
   onLoad: function(options){
     this.setData({
-      isLoading: true
-    })
+      isLoading: true,
+    });
     wx.getUserInfo({
       success: (data) => {
         console.log(data)
@@ -17,13 +20,44 @@ Page({
           userInfo: data.userInfo
         })
       }
-    })
+    });
+    this.getData();
   },
 
   onReady: function() {
-    this.setData({
-      isLoading: false
+    this.getData();
+  },
+
+  getData() {
+    fetch.get('/collection').then(res => {
+      console.log("User--->collect--->",res);
+      this.setData({
+        collectData: res.data,
+        isLoading: false
+      })
+    }).catch(err => {
+      this.setData({
+        isLoading: false
+      })
     })
+  },
+
+  jumpCollect() {
+      wx.navigateTo({
+        url: `/pages/collect/collect`,
+      })
+  },
+
+  chickText() {
+    wx.showModal({
+      title: '点我干嘛？',
+      content: '好玩吗？',
+      showCancel: false      
+    })
+  },
+
+  onPullDownRefresh() {
+    this.getData();
   },
 
   onShareAppMessage: function () {

@@ -49,7 +49,7 @@ Page({
     fetch.get(`/titles/${this.data.bookId}`).then(res => {
       console.log("Book--->catalog--->", res)
       this.setData({
-        catalog: res.data
+        catalog: res.data,
       })
     })
   },
@@ -64,7 +64,8 @@ Page({
   handleGet(event) {
     const id = event.currentTarget.dataset.id
     this.setData({
-      titleId: id
+      titleId: id,
+      isShow: !this.data.isShow
     })
     this.getData()
     console.log("Book--->titleId", this.data.titleId)

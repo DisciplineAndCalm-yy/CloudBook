@@ -8,7 +8,7 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log("Catalog--->catalog--->",options)
+    console.log("Catalog--->options--->",options)
     this.setData({
       bookId: options.id
     });

@@ -1,8 +1,10 @@
 /* pages/catalog/catalog.wxss */
 
 .catalog {
-  font-size: 14px;
+  font-size: 28rpx;
   color: #333;
+  border: 1px solid #f1f1f1;
+  padding: 40rpx 20rpx
 }
 
 .catalog .link {

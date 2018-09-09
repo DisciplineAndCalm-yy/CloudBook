@@ -5,7 +5,7 @@
   <view wx:else class="wemark-wrap" style="{{'font-size:' + font + 'rpx'}}" wx:else>
     <wemark md="{{article}}" highlight type="rich-text"></wemark>
   </view>
-  <scroll-view scroll-y class="catalog-menu {{isShow ? 'active': ''}}">
+  <scroll-view scroll-y='true' bindscrolltoupper='handlePrev' bindscrolltolower='handleNext' class="catalog-menu {{isShow ? 'active': ''}}">
     <view class="catalog-item" wx:for="{{catalog}}" wx:key="{{index}}" bindtap="handleGet" data-id="{{item._id}}">
       {{item.title}}
     </view>

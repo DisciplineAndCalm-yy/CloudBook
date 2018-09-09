@@ -1,12 +1,12 @@
 {
   "pages": [
-    "pages/user/user",
     "pages/index/index",
     "pages/details/detail",
     "pages/catalog/catalog",
     "pages/book/book",
-    "pages/book-catalog/book-catalog"
-
+    "pages/collect/collect",
+    "pages/book-home/book-home",
+    "pages/user/user"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -23,7 +23,7 @@
         "selectedIconPath": "/static/img/index-select.png"
       },
       {
-        "pagePath": "pages/book-catalog/book-catalog",
+        "pagePath": "pages/book-home/book-home",
         "text": "我的书屋",
         "iconPath": "/static/img/book.png",
         "selectedIconPath": "/static/img/book-select.png"

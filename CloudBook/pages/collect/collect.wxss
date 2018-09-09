@@ -1,11 +1,4 @@
-/**index.wxss**/
-
-.index .slide-image {
-  width: 710rpx;
-  height: 350rpx;
-  padding: 0 20rpx;
-}
-
+/* pages/collect/collect.wxss */
 .content-item {
   margin-top: 40rpx;
 }
@@ -60,44 +53,4 @@
 
 .aurhot-r text {
   margin-left: 10rpx;
-}
-
-.load-more{
-  height: 160rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.load-more .img{
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.load-more text{
-  margin-left: 20rpx;
-  font-size: 28rpx;
-}
-
-.no-more{
-  margin-top: 40rpx;
-  margin-bottom: 20rpx;
-  display: flex;
-  align-items: center;
-}
-
-.no-more .line{
-  position: absolute;
-  width: 100%;
-  height: 1px;
-  background-color: #ccc;
-  z-index: -1;
-}
-
-.no-more .no-more-text{
-  margin-left: 40%;
-  position: absolute;
-  font-size: 28rpx;
-  color: #aaa;
-  z-index: 998;
 }

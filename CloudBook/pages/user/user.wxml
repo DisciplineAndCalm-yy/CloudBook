@@ -14,8 +14,8 @@
       </view>
       <view class='user-b'>
         <view class='collect'>
-          <text class='userfont'>收藏：</text>
-          <view class='collect-nums userfont'>2</view>
+          <text class='userfont' bindtap='jumpCollect'>收藏：</text>
+          <view class='collect-nums userfont'>{{collectData.length}}</view>
         </view>
         <view class='attention'>
           <text class='userfont'>关注：</text>
@@ -24,11 +24,15 @@
       </view>
     </view>
     <view class='programmer-say'>
-      <text class='content'></text>
+      <view class='content' bindtap='chickText'>又不是不能跑</view>
+      <view class='content-2' bindtap='chickText'>又不是不能跑</view>
     </view>
     <view class='feedback'>
       <textarea class='feedback-write'></textarea>
-      <button class='btn'>提交</button>
+      <view class='fb-btn'>
+        <button class='btn'>反馈提交</button>
+        <button class='btn' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+      </view>
     </view>
   </view>
 </view>

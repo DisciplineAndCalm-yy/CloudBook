@@ -1,6 +1,7 @@
 /* pages/user/user.wxss */
 
 .user .user-main {
+  padding: 20rpx 20rpx;
   width: 100%;
   height: 400rpx;
   display: flex;
@@ -18,7 +19,7 @@
 }
 
 .user-t .user-msg{
-  font-size: 16px;
+  font-size: 32rpx;
 }
 
 .user-msg .sdf{
@@ -40,7 +41,7 @@
 }
 
 .user-main .user-b .userfont {
-  font-size: 14px;
+  font-size: 28rpx;
 }
 
 .user-b .collect {
@@ -58,8 +59,50 @@
   height: 280rpx;
 }
 
-.programmer-say .conten{
+.programmer-say .content{
   background: #f2f2f2;
+  width: 220rpx;
+  height: 100rpx;
+  background: red;
+  position: relative;
+  animation:myfirst 5s infinite;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 30%;
+}
+
+@keyframes myfirst
+{
+0%   {background:red; left:20rpx; top:20rpx;}
+25%  {background:yellow; left:500rpx; top:20rpx;}
+50%  {background:blue; left:500rpx; top:140rpx;}
+75%  {background:green; left:20rpx; top:140rpx;}
+100% {background:red; left:20rpx; top:20rpx;}
+}
+
+.programmer-say .content-2{
+  background: #f2f2f2;
+  width: 220rpx;
+  height: 100rpx;
+  background: red;
+  position: relative;
+  animation:mysecond 5s infinite;
+  color: #fff;
+  font-size: 36rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 30%;
+}
+
+@keyframes mysecond
+{
+0%   {background:red; left:500rpx; top:70rpx;}
+25%  {background:yellow; left:20rpx; top:70rpx;}
+50%  {background:blue; left:20rpx; top:-80rpx;}
+75%  {background:green; left:500rpx; top:-80rpx;}
+100% {background:red; left:500rpx; top:70rpx;}
 }
 
 .feedback{
@@ -73,9 +116,21 @@
   border: 1px solid #ccc;
 }
 
-.feedback .btn{
-  width: 700rpx;
+.feedback .fb-btn{
+  width: 100%;
   height: 100rpx;
+  background: #f1f1f1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20rpx 0;
+}
+
+.fb-btn .btn{
+  font-size: 30rpx;
+  color: #555;
+  width: 275rpx;
+  height: 70rpx;
   text-align: center;
-  align-items: center;
+  line-height: 80rpx;
 }

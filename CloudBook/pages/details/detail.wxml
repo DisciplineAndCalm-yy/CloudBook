@@ -20,7 +20,7 @@
         </view>
       </view>
       <view class="book-b">
-        <button class="btn" bindtap='toggleCollect' disabled='{{bookData.isCollect == 0 ? false : true}}'>
+        <button class="btn" bindtap='{{bookData.isCollect == 0 ? "toggleCollect" : "deteleCollect"}}'>
           {{bookData.isCollect == 0 ? "收藏" : "已收藏"}}
         </button>
         <button class="btn" open-type="share">

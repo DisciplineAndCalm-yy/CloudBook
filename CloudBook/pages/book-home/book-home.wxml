@@ -1,0 +1,28 @@
+<view>
+  <image src='/static/img/chidou.svg' wx:if='{{isLoading}}' wx:key='{{index}}' class='loading'></image>
+  <view wx:else>
+    <view class='main' wx:for='{{readBook}}' wx:key='{{index}}' wx:for-item="readItem" data-id="{{readItem.book._id}}">
+      <view class='box-left'>
+        <image class='img' src='{{readItem.book.img}}'></image>
+      </view>
+      <view class='box-right'>
+        <view class='box-r-top'>
+          <view class='title'>{{readItem.book.title}}</view>
+          <view class='chapter'>书籍{{readItem.title.index}} / {{readItem.title.total}}章节</view>
+          <view class='pro-bar'>
+            <progress class='pro' percent='{{num}}' show-info active='true'>已看</progress>
+            <view class='lookover'></view>
+          </view>
+          <view class='last'>
+            <view class='chap'>上次查看：</view>
+            <view class='time'>2天前</view>
+          </view>
+        </view>
+        <view class='box-r-btm'>
+          <button class='btn' bindtap='jumpContinue' data-id='{{readItem.book._id}}' data-titleid='{{readItem.title._id}}'>继续阅读</button>
+          <button class='btn' bindtap='jumpBook'>查看文章</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
